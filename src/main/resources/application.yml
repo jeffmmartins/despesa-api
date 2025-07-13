@@ -1,0 +1,21 @@
+# Configurações do H2 Database
+spring:
+  h2:
+    console:
+      enabled: true # Habilita o console web do H2
+      path: /h2-console # Define o caminho de acesso ao console (ex: http://localhost:8080/h2-console)
+
+  datasource:
+    url: jdbc:h2:mem:despesasdb # URL de conexão para um banco de dados em memória chamado 'despesasdb'
+    driverClassName: org.h2.Driver # Driver do H2
+    username: sa # Usuário padrão do H2
+    password: # Senha padrão (vazia)
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect # Dialeto do Hibernate para H2
+    hibernate:
+      ddl-auto: update # MAIS IMPORTANTE: Isso faz o Hibernate criar/atualizar as tabelas automaticamente
+    show-sql: true # Para ver os comandos SQL sendo gerados no console
+    properties:
+      hibernate:
+        format_sql: true # Formata o SQL para melhor leitura
