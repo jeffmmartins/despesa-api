@@ -1,16 +1,22 @@
 package com.github.jeffmmartins.despesas_API.entities;
 
+import jakarta.persistence.*;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "tb_despesa")
 public class Despesa {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String descricao;
     private BigDecimal valor;
     private LocalDate data;
 
-    private Despesa(){
+    public Despesa(){
 
     }
 
