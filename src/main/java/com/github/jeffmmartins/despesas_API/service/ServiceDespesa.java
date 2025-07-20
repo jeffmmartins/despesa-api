@@ -23,8 +23,9 @@ public class ServiceDespesa {
     }
 
     //Metódo para buscar a despesa pelo od.
-    public Despesa buscarPorId(Despesa despesa){
-        despesaRepository.findById(despesa.getId());
+    public Despesa buscarPorId(Long id){
+        return despesaRepository.findById(id).
+                orElseThrow(() -> new RuntimeException("Despesa não encontrada com ID: " + id));
     }
 
 
