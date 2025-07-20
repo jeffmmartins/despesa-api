@@ -14,19 +14,27 @@ public class ServiceDespesa {
     }
 
     //Metódo para cadastrar a despesa.
-    public void saveDespesa(Despesa despesa){
-        //Realizando a verificação se o objeto está vazio.
+    public void cadastrarDespesa(Despesa despesa){
+        //Realizando a validação se o objeto está vazio.
         if (despesa == null){
             throw new IllegalArgumentException("Por gentileza inserir as informações");
         }
         despesaRepository.save(despesa);
     }
 
-    //Metódo para buscar a despesa pelo od.
+    //Metódo para buscar a despesa pelo id.
     public Despesa buscarPorId(Long id){
         return despesaRepository.findById(id).
                 orElseThrow(() -> new RuntimeException("Despesa não encontrada com ID: " + id));
     }
 
+    //Metódo que permite atualizar a despesa.
+    public void atualizarDespesa(Despesa despesa){
+        despesaRepository.save(despesa);
+    }
 
+    //Metódo para deletar um despesa.
+    public void deleteDespesa(Long id){
+        despesaRepository.deleteById(id);
+    }
 }
