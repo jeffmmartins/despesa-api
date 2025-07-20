@@ -19,13 +19,17 @@ A cada novo conceito ou módulo que aprendo em **Spring Boot**, **Spring Data JP
 * Estruturação de Projeto: Definição de pacotes e camadas (entities, repository).
 * Mapeamento de Entidades: Configuração da entidade `Despesa` para persistência no banco de dados.
 * Configuração de Banco de Dados: Integração e configuração do H2 Database.
-* Operações CRUD Básicas (em breve): Implementação de funcionalidades para cadastrar, pesquisar e deletar despesas.
+* **Camada de Serviço (Service Layer):**
+    * `cadastrarDespesa()`: Cadastra uma nova despesa (com validação básica de nulidade do objeto).
+    * `buscarPorId()`: Busca uma despesa pelo seu ID (com tratamento para recurso não encontrado).
+    * `atualizarDespesa()`: Atualiza uma despesa existente pelo ID (funcional, com validação básica).
+    * `deleteDespesa()`: Deleta uma despesa pelo ID (funcional).
 
 ## Próximos Passos (Plano de Aprendizado e Evolução):
 
-* Implementação da camada de Serviço (`@Service`) e Controlador (`@RestController`).
-* Desenvolvimento das operações CRUD completas via endpoints REST.
-* Tratamento de exceções e validações de dados.
+* **Implementação da Camada de Controle (`@RestController`):** Exposição dos endpoints da API REST para todas as operações CRUD (POST, GET, PUT/PATCH, DELETE).
+* **Tratamento de Exceções Global:** Implementar um `ControllerAdvice` para um tratamento de erros mais sofisticado (ex: mapear `ResourceNotFoundException` para `404 Not Found`).
+* **Validações Detalhadas:** Adição de validações mais abrangentes nos campos da entidade (`@Valid` em DTOs, validações no serviço).
 * Adição de novas funcionalidades, como categorias de despesas, filtros de busca avançados e autenticação/autorização (se o projeto evoluir nesse sentido).
 
 ## Como Rodar o Projeto Localmente:
