@@ -31,12 +31,12 @@ public class DespesaController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Despesa> atualizarDespesa(@PathVariable("id") Long id, @RequestBody Despesa despesaAtualizada){
-        Despesa despesaModificada = serviceDespesa.atualizarDespesa(despesaAtualizada,id);
+        Despesa despesaModificada = serviceDespesa.atualizarDespesa(id,despesaAtualizada);
         return ResponseEntity.ok(despesaModificada);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletarDespesaPoId(@PathVariable("id") Long id){
+    public ResponseEntity<Void> deletarDespesaPorId(@PathVariable("id") Long id){
         serviceDespesa.deleteDespesa(id);
         return ResponseEntity.noContent().build();
     }

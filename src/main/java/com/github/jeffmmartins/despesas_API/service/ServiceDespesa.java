@@ -2,7 +2,11 @@ package com.github.jeffmmartins.despesas_API.service;
 
 import com.github.jeffmmartins.despesas_API.entities.Despesa;
 import com.github.jeffmmartins.despesas_API.repository.DespesaRepository;
+import com.github.jeffmmartins.despesas_API.exceptions.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
+
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 public class ServiceDespesa {
@@ -30,8 +34,12 @@ public class ServiceDespesa {
     }
 
     //Metódo que permite atualizar a despesa.
-    public Despesa atualizarDespesa(Despesa despesa, Long id){
-        return  despesaRepository.save(despesa,id);
+
+    public Despesa atualizarDespesa(Long id, Despesa despesaAtualizada ) {
+        Despesa despesaExistente = despesaRepository.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("Despesa não encontrada com ID: " + id));
+
+        return despesaExistente;
     }
 
     //Metódo para deletar um despesa.
