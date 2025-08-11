@@ -3,7 +3,6 @@ package com.github.jeffmmartins.despesas_API.controller;
 import com.github.jeffmmartins.despesas_API.entities.Despesa;
 import com.github.jeffmmartins.despesas_API.service.ServiceDespesa;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,7 +35,9 @@ public class DespesaController {
         return ResponseEntity.ok(despesaModificada);
     }
 
-
-
-
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletarDespesaPoId(@PathVariable("id") Long id){
+        serviceDespesa.deleteDespesa(id);
+        return ResponseEntity.noContent().build();
+    }
 }
