@@ -13,9 +13,9 @@ public class ServiceDespesa {
         this.despesaRepository = despesaRepository;
     }
 
-    //Metódo para cadastrar a despesa.
+    //Metódo para cadastrar despesa.
     public void cadastrarDespesa(Despesa despesa){
-        //Realizando a validação se o objeto está vazio.
+        // Valida se o objeto despesa é nulo.
         if (despesa == null){
             throw new IllegalArgumentException("Por gentileza inserir as informações");
         }
