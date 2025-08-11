@@ -39,6 +39,9 @@ public class ServiceDespesa {
         Despesa despesaExistente = despesaRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Despesa não encontrada com ID: " + id));
 
+        despesaExistente.setDescricao(despesaAtualizada.getDescricao());
+        despesaExistente.setValor(despesaAtualizada.getValor());
+        despesaExistente.setData(despesaAtualizada.getData());
         return despesaExistente;
     }
 
