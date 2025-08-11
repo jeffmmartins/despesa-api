@@ -26,9 +26,9 @@ public class DespesaController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Despesa> buscarPorId(@PathVariable("id") Long id){
-        Despesa retornoDespesaPorId = serviceDespesa.buscarPorId(id);
+        Despesa despesaEncontrada = serviceDespesa.buscarPorId(id);
 
-        return ResponseEntity.ok(retornoDespesaPorId);
+        return ResponseEntity.ok(despesaEncontrada);
     }
 
 }
