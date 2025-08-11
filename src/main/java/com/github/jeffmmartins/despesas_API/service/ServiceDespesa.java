@@ -41,7 +41,7 @@ public class ServiceDespesa {
         despesaExistente.setDescricao(despesaAtualizada.getDescricao());
         despesaExistente.setValor(despesaAtualizada.getValor());
         despesaExistente.setData(despesaAtualizada.getData());
-        return despesaExistente;
+        return despesaRepository.save(despesaExistente);
     }
 
     //Metódo para deletar um despesa.
