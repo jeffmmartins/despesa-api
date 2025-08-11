@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/despesas")
 public class DespesaController {
 
-    private ServiceDespesa serviceDespesa;
+    private final ServiceDespesa serviceDespesa;
 
     public DespesaController(ServiceDespesa serviceDespesa) {
         this.serviceDespesa = serviceDespesa;
