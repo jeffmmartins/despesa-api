@@ -14,7 +14,7 @@ public class ServiceDespesa {
     }
 
     //Metódo para cadastrar despesa.
-    public void cadastrarDespesa(Despesa despesa){
+    public Despesa cadastrarDespesa(Despesa despesa){
         // Valida se o objeto despesa é nulo.
         if (despesa == null){
             throw new IllegalArgumentException("Por gentileza inserir as informações");
