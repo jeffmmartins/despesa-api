@@ -20,16 +20,13 @@ public class Despesa {
 
     }
 
-    public Despesa(Long id, String descricao, BigDecimal valor, LocalDate data) {
-        this.id = id;
+    public Despesa(String descricao, BigDecimal valor, LocalDate data) {
         this.descricao = descricao;
         this.valor = valor;
         this.data = data;
     }
 
-    public Long getId() {
-        return id;
-    }
+
 
     public String getDescricao() {
         return descricao;
