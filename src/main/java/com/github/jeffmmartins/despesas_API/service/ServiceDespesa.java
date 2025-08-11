@@ -2,7 +2,6 @@ package com.github.jeffmmartins.despesas_API.service;
 
 import com.github.jeffmmartins.despesas_API.entities.Despesa;
 import com.github.jeffmmartins.despesas_API.repository.DespesaRepository;
-import com.github.jeffmmartins.despesas_API.exceptions.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;
