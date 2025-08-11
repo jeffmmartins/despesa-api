@@ -27,8 +27,16 @@ public class DespesaController {
     @GetMapping("/{id}")
     public ResponseEntity<Despesa> buscarPorId(@PathVariable("id") Long id){
         Despesa despesaEncontrada = serviceDespesa.buscarPorId(id);
-
         return ResponseEntity.ok(despesaEncontrada);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Despesa> atualizarDespesa(@PathVariable("id") Long id, @RequestBody Despesa despesaAtualizada){
+        Despesa despesaModificada = serviceDespesa.atualizarDespesa(despesaAtualizada,id);
+        return ResponseEntity.ok(despesaModificada);
+    }
+
+
+
 
 }

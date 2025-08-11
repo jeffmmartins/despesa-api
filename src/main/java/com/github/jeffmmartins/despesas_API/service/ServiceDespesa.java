@@ -30,8 +30,8 @@ public class ServiceDespesa {
     }
 
     //Metódo que permite atualizar a despesa.
-    public void atualizarDespesa(Despesa despesa){
-        despesaRepository.save(despesa);
+    public Despesa atualizarDespesa(Despesa despesa, Long id){
+        return  despesaRepository.save(despesa,id);
     }
 
     //Metódo para deletar um despesa.
