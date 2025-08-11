@@ -19,7 +19,8 @@ public class ServiceDespesa {
         if (despesa == null){
             throw new IllegalArgumentException("Por gentileza inserir as informações");
         }
-        despesaRepository.save(despesa);
+        Despesa despesaSalva = despesaRepository.save(despesa);
+        return despesaSalva;
     }
 
     //Metódo para buscar a despesa pelo id.
