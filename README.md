@@ -52,6 +52,4 @@ A cada novo conceito ou módulo que aprendo em **Spring Boot**, **Spring Data JP
     * **Password:** (deixe em branco)
     * Clique em "Connect".
 
----
 
-Usar essa descrição no `README.md` e mantê-lo atualizado conforme você avança no projeto é uma das melhores formas de apresentar seu trabalho.
