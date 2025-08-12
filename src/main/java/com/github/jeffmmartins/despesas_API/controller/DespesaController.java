@@ -18,21 +18,17 @@ public class DespesaController {
 
     @PostMapping
     public ResponseEntity<Despesa> cadastrarDespesa(@RequestBody Despesa despesa){
-        Despesa despesaSalva = serviceDespesa.cadastrarDespesa(despesa);
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(despesaSalva);
+        return ResponseEntity.status(HttpStatus.CREATED).body(serviceDespesa.cadastrarDespesa(despesa));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Despesa> buscarPorId(@PathVariable("id") Long id){
-        Despesa despesaEncontrada = serviceDespesa.buscarPorId(id);
-        return ResponseEntity.ok(despesaEncontrada);
+        return ResponseEntity.ok(serviceDespesa.buscarPorId(id));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Despesa> atualizarDespesa(@PathVariable("id") Long id, @RequestBody Despesa despesaAtualizada){
-        Despesa despesaModificada = serviceDespesa.atualizarDespesa(id,despesaAtualizada);
-        return ResponseEntity.ok(despesaModificada);
+        return ResponseEntity.ok(serviceDespesa.atualizarDespesa(id,despesaAtualizada));
     }
 
     @DeleteMapping("/{id}")
