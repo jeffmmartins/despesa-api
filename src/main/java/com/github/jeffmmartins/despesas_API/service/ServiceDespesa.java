@@ -20,9 +20,17 @@ public class ServiceDespesa {
     public Despesa cadastrarDespesa(Despesa despesa){
         // Valida se o objeto despesa é nulo.
         if (despesa == null){
-            throw new IllegalArgumentException("Por gentileza inserir as informações");
+            throw new IllegalArgumentException("O objeto despesa não pode ser nulo.");
         }
-
+        if (despesa.getDescricao() == null || despesa.getDescricao().isBlank()) {
+            throw new IllegalArgumentException("A descrição da despesa é obrigatória.");
+        }
+        if (despesa.getValor() == null || despesa.getValor().compareTo(java.math.BigDecimal.ZERO) <= 0) {
+            throw new IllegalArgumentException("O valor da despesa deve ser positivo e não pode ser nulo.");
+        }
+        if (despesa.getData() == null) {
+            throw new IllegalArgumentException("A data da despesa é obrigatória.");
+        }
         return despesaRepository.save(despesa);
     }
 

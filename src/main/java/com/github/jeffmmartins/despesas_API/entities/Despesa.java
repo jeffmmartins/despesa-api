@@ -26,7 +26,9 @@ public class Despesa {
         this.data = data;
     }
 
-
+    public Long getId() {
+        return id;
+    }
 
     public String getDescricao() {
         return descricao;
