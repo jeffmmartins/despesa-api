@@ -16,7 +16,7 @@ public class SwaggerConfig {
                         .contact(new Contact()
                                 .name("Jefferson Martins Mendes")
                                 .url("https://github.com/jeffmmartins/despesa-api")
-                                )
+                                .email("jeffersonmartinmendes@gmail.com"))
                         .version("1.0.0"));
     }
 }
